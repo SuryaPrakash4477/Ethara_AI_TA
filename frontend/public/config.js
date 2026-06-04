@@ -3,4 +3,4 @@
  * Render Dashboard → inventory-api → copy the URL (https://....onrender.com)
  * Paste below with NO trailing slash, then redeploy Vercel (or push to GitHub).
  */
-window.__API_URL__ = '';
+window.__API_URL__ = 'https://inventory-api-98wv.onrender.com';
