@@ -18,17 +18,17 @@ docker compose up --build
 ```
 
 This starts three services:
-1. **PostgreSQL Database (`db`)** on port `5432` with a persistent Docker volume.
-2. **FastAPI Backend (`backend`)** on port `8000`.
-3. **React Frontend (`frontend`)** on port `3000`.
+1. **PostgreSQL Database (`db`)** on host port `5433` (container `5432`) with a persistent Docker volume.
+2. **FastAPI Backend (`backend`)** on port `8001`.
+3. **React Frontend (`frontend`)** on port `3001`.
 
 ### Database Auto-Seeding
 On its initial startup, if the database is completely empty, the backend will **automatically seed mock data** (5 Products, 3 Customers, and 1 Order). This makes testing and evaluating the frontend immediate!
 
 Access endpoints:
-* **Frontend Web App**: [http://localhost:3000](http://localhost:3000)
-* **Backend API Root**: [http://localhost:8000](http://localhost:8000)
-* **Interactive API Documentation (Swagger)**: [http://localhost:8000/docs](http://localhost:8000/docs)
+* **Frontend Web App**: [http://localhost:3001](http://localhost:3001)
+* **Backend API Root**: [http://localhost:8001](http://localhost:8001)
+* **Interactive API Documentation (Swagger)**: [http://localhost:8001/docs](http://localhost:8001/docs)
 
 ---
 
