@@ -65,11 +65,11 @@ app = FastAPI(
     lifespan=lifespan
 )
 
-# Enable CORS for React frontend (all origins allowed for dev/deployment flexibility)
+# CORS: credentials must be False when using wildcard origins (browser blocks * + credentials)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )

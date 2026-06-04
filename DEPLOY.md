@@ -12,12 +12,27 @@ Repo: [github.com/SuryaPrakash4477/Ethara_AI_TA](https://github.com/SuryaPrakash
 
 ## 2. Frontend on Vercel (~5 min)
 
-1. Sign in at [vercel.com](https://vercel.com) with GitHub.
-2. **Add New Project** → import **Ethara_AI_TA**.
-3. Set **Root Directory** to `frontend`.
-4. **Environment Variables** → add:
-   - `VITE_API_URL` = your Render API URL (no trailing slash), e.g. `https://inventory-api-xxxx.onrender.com`
-5. Deploy. Copy the Vercel URL, e.g. `https://ethara-ai-ta.vercel.app`.
+**If you see "failed to fetch" / "Error connecting to the backend API":** the app was built without your Render URL. Fix with **either** option below.
+
+### Option A — `config.js` (recommended)
+
+1. In Render: open **inventory-api** → copy the service URL (e.g. `https://inventory-api-xxxx.onrender.com`).
+2. Edit `frontend/public/config.js` in GitHub (or locally):
+   ```javascript
+   window.__API_URL__ = 'https://inventory-api-xxxx.onrender.com';
+   ```
+3. Commit and push → Vercel redeploys automatically.
+
+### Option B — Vercel environment variable
+
+1. Vercel → **ethara-ai-ta** → **Settings** → **Environment Variables**
+2. Add `VITE_API_URL` = your Render URL (Production + Preview)
+3. **Deployments** → latest → **⋯** → **Redeploy** (required — Vite bakes env vars at build time)
+
+### Initial Vercel setup
+
+1. Import **Ethara_AI_TA**, root directory `frontend`.
+2. Apply Option A or B above, then deploy.
 
 ## 3. Docker Hub image (assessment deliverable)
 
