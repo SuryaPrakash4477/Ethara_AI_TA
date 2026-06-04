@@ -9,17 +9,12 @@ Fill in the live URLs after deploying (see README **Cloud Deployment Guide**).
 | Live backend API | ⏳ Deploy to Render / Railway / Fly.io | _e.g. `https://your-api.onrender.com`_ |
 | Live frontend | ⏳ Deploy to Vercel / Netlify | _e.g. `https://your-app.vercel.app`_ |
 
-## Deploy backend (Render example)
+## Quick deploy
 
-1. Push this repo to GitHub.
-2. Create a PostgreSQL database on Render (or Supabase).
-3. New **Web Service** → Docker → root/context: `backend`, Dockerfile: `backend/Dockerfile`.
-4. Environment: `DATABASE_URL=<your-postgres-url>`.
-5. Push the same image to Docker Hub: `docker build -t <user>/inventory-backend ./backend && docker push <user>/inventory-backend`.
+See **[DEPLOY.md](./DEPLOY.md)** for full steps.
 
-## Deploy frontend (Vercel example)
-
-1. Import repo, set **Root Directory** to `frontend`.
-2. Build: `npm run build`, Output: `dist`.
-3. Environment: `VITE_API_URL=https://your-api.onrender.com` (no trailing slash).
-4. Redeploy after backend URL is known.
+| Step | Platform | Action |
+|------|----------|--------|
+| 1 | [Render](https://render.com/deploy?repo=https://github.com/SuryaPrakash4477/Ethara_AI_TA) | Blueprint deploy (`render.yaml`) |
+| 2 | [Vercel](https://vercel.com/new) | Import repo, root `frontend`, set `VITE_API_URL` |
+| 3 | [Docker Hub](https://hub.docker.com/) | `docker push suryaprakash4477/inventory-backend` |

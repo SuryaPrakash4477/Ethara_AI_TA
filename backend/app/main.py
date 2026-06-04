@@ -74,13 +74,17 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Root endpoint
 @app.get("/")
 def read_root():
     return {
         "message": "Welcome to the Inventory & Order Management API",
         "docs_url": "/docs"
     }
+
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
 
 # Include all API endpoints
 app.include_router(products.router)

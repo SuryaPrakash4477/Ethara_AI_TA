@@ -19,8 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy backend codebase
 COPY app/ /app/app/
 
-# Expose port
+# Render and other hosts inject PORT; default 8000 for local Docker Compose
 EXPOSE 8000
 
-# Run uvicorn
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
